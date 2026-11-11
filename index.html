@@ -3,146 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lowongan Kerja Valbury</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>Profil & Lowongan - Valbury Makassar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    font-family:'Inter',sans-serif;
-    color:#1E2A47;
-  }
-  /* GAMBAR IMPOR YANG TETAP SAAT DISCROLL */
+  body{font-family:'Inter',sans-serif; color:#1E2A47; line-height:1.6}
+  
+  /* BACKGROUND FIXED - TETAP WALAU DISCROLL */
   .bg-fixed{
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background-image: url('URL_GAMBAR_KAMU.jpg'); /* GANTI DI SINI */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -2;
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920');
+    background-size: cover; background-position: center;
+    z-index:-2;
   }
   .bg-overlay{
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(240,244,248,0.85); /* warna overlay biar teks kebaca */
-    z-index: -1;
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%);
+    z-index:-1;
   }
 
   #cover{
-    height:100vh;
-    display:flex; flex-direction:column;
-    justify-content:center; align-items:center;
-    text-align:center;
-    color:white;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('URL_GAMBAR_KAMU.jpg') center/cover fixed;
+    height:100vh; display:flex; flex-direction:column;
+    justify-content:center; align-items:center; text-align:center; color:white;
+    background: linear-gradient(rgba(10,31,26,0.85), rgba(10,31,26,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover fixed;
+    padding:20px;
   }
-  #cover h1{font-family:'Playfair Display',serif; font-size:3rem}
-  #cover p{margin-top:10px; font-size:1.2rem}
-  .btn-buka{
-    margin-top:25px; padding:14px 35px;
-    background:#D4AF37; color:white;
-    border:none; border-radius:50px;
-    font-size:1.1rem; cursor:pointer; font-weight:600;
-  }
+  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1}
+  #cover h1 span{color:#D4AF37}
+  #cover p{margin-top:15px; font-size:1.25rem; opacity:0.9; max-width:600px}
+  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; letter-spacing:0.5px; box-shadow:0 10px 30px rgba(212,175,55,0.4)}
 
-  #content{
-    display:none;
-    max-width:720px; margin:40px auto;
-    background:white;
-    padding:40px 30px;
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.15);
-  }
-  .foto{
-    width:180px; height:180px;
-    border-radius:50%; object-fit:cover;
-    border:4px solid #D4AF37; margin:0 auto 20px; display:block;
-  }
-  h2{font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; font-size:2.2rem; margin:10px 0}
-  .tanggal{text-align:center; opacity:0.7; margin-bottom:20px}
-  .box{
-    background:#F8FAFC; padding:20px;
-    border-radius:12px; text-align:left; margin:20px 0;
-    border-left:4px solid #D4AF37;
-  }
-  hr{margin:30px 0; border:none; border-top:1px solid #eee}
-  .form-wrap{
-    background:#fff; padding:25px;
-    border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    margin-top:20px;
-  }
-  input, textarea, select{
-    width:100%; padding:14px; margin-top:8px;
-    border:2px solid #eee; border-radius:10px; outline:none;
-  }
-  button.submit{
-    width:100%; padding:16px; margin-top:15px;
-    background:#D4AF37; color:white;
-    border:none; border-radius:10px;
-    font-weight:600; font-size:1rem; cursor:pointer;
-  }
+  #content{display:none; max-width:800px; margin:0 auto; padding:30px 20px 80px}
+  .card{background:white; padding:35px 30px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.12); margin-bottom:25px}
+  .badge{display:inline-block; background:#0A1F1A; color:#D4AF37; padding:6px 14px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:15px}
+  h2{font-family:'Playfair Display',serif; color:#0A1F1A; font-size:2rem; margin-bottom:10px}
+  h3{font-family:'Playfair Display',serif; color:#D4AF37; font-size:1.4rem; margin:25px 0 12px}
+  .foto{width:100%; height:260px; border-radius:16px; object-fit:cover; margin-bottom:20px; display:block}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:15px}
+  .box{background:#F8FAFC; padding:18px; border-radius:12px; border-left:4px solid #D4AF37; text-align:left}
+  .box b{color:#0A1F1A}
+  ul{padding-left:20px; text-align:left}
+  ul li{margin-bottom:8px}
+  hr{margin:35px 0; border:none; border-top:1px solid #E5E7EB}
+  input,textarea,select{width:100%; padding:14px; margin-top:8px; border:2px solid #E5E7EB; border-radius:10px; outline:none; font-family:'Inter',sans-serif}
+  input:focus,textarea:focus,select:focus{border-color:#D4AF37}
+  button.submit{width:100%; padding:16px; margin-top:18px; background:#0A1F1A; color:#D4AF37; border:none; border-radius:10px; font-weight:700; font-size:1.05rem; cursor:pointer}
+  .legal{font-size:13px; color:#6B7280; background:#F9FAFB; padding:15px; border-radius:10px; line-height:1.7}
+  @media(max-width:600px){#cover h1{font-size:2.2rem}.grid2{grid-template-columns:1fr}.card{padding:25px 20px}}
 </style>
 </head>
 <body>
 
-<!-- BACKGROUND TETAP -->
 <div class="bg-fixed"></div>
 <div class="bg-overlay"></div>
 
 <div id="cover">
-  <h1>Lowongan Terbuka</h1>
-  <p>PT. Valbury Makassar</p>
-  <button class="btn-buka" onclick="buka()">Info</button>
+  <h1>PT VALBURY <span>MAKASSAR</span></h1>
+  <p>Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
+  <button class="btn-buka" onclick="buka()">Lihat Profil & Lowongan</button>
 </div>
 
 <div id="content">
-  <img src="URL_GAMBAR_KAMU.jpg" class="foto" alt="perusahaan">
-  <h2>PT. Valbury</h2>
-  <p class="tanggal">Makassar, 11 November 2026</p>
 
-  <p style="line-height:1.8; text-align:center">Setelah proses seleksi, kami menyatakan Anda <b>DITERIMA</b> sebagai bagian dari tim kami.</p>
+  <!-- PROFILING -->
+  <div class="card">
+    <span class="badge">PROFIL PERUSAHAAN</span>
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" class="foto" alt="Valbury Office">
+    <h2>PT Valbury Asia Futures</h2>
+    <p style="opacity:0.8">PT Valbury Asia Futures adalah perusahaan pialang berjangka terkemuka, cikal bakal dari PT Halim Danamas International tahun 1990 - salah satu pendiri Bursa Berjangka Jakarta (BBJ). Tahun 2003 resmi menjadi Valbury Asia Futures yang fokus pada perdagangan derivatif.</p>
+    
+    <h3>Visi & Misi</h3>
+    <p><b>Visi:</b> Menjadi perusahaan pialang berjangka terbaik di Indonesia yang menjadi rujukan utama investor dalam perdagangan derivatif.</p>
+    <p style="margin-top:10px"><b>Misi:</b> Membangun kemitraan jangka panjang berlandaskan kepercayaan, keandalan, edukasi berkelanjutan, dan layanan teknologi canggih.</p>
 
-  <div class="box">
-    <p><b>Nama:</b> Box</p>
-    <p><b>Posisi:</b> Digital Marketing Specialist</p>
-    <p><b>Tanggal Masuk:</b> 01 Desember 2026</p>
-    <p><b>Gaji:</b> Rp 7.500.000</p>
-    <p><b>Lokasi:</b>wq Makassar</p>
+    <h3>Legalitas Lengkap</h3>
+    <div class="legal">
+      • Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003 – 5 Feb 2003<br>
+      • Anggota Bursa JFX: SPAB-046/BBJ/06/02 – 18 Juni 2002<br>
+      • Anggota ICDX & ICH: 077 & 078/SK/DIR/VI/2026<br>
+      • Kliring KBI: 13/AKA-KBI/III/2003<br>
+      • Izin Online: 22/BAPPEBTI/KEP-PBK/08/2014<br>
+      • PALN Luar Negeri: Alpaca Securities LLC<br>
+      • OJK Derivatif: S-124/PM.02/2025<br>
+      • BI PUVA: 28/307/DPPK/Srt/B – 17 Mar 2026<br>
+      • Kantor Pusat: Menara Karya Lt 9, Jl. HR Rasuna Said X-5 Kav 1-2, Kuningan, Jaksel 12950
+    </div>
   </div>
 
-  <p style="text-align:center; line-height:1.7">Gambar background di belakang ini <b>tidak akan ikut scroll</b>, tetap diam karena pakai <code>position: fixed + background-attachment: fixed</code>.</p>
+  <div class="card">
+    <span class="badge">CABANG MAKASSAR</span>
+    <h2>Valbury Makassar</h2>
+    <p>Sebagai salah satu cabang strategis di Indonesia Timur, Valbury Makassar melayani edukasi dan transaksi untuk nasabah retail & korporat di Sulawesi.</p>
+    
+    <div class="grid2" style="margin-top:20px">
+      <div class="box">
+        <b>Alamat</b><br>
+        Gedung Graha Pena Lt. tertentu, Jl. Urip Sumoharjo No.20, Makassar (Hubungi pusat untuk alamat cabang update: 021-25533777)
+      </div>
+      <div class="box">
+        <b>Kontak Resmi</b><br>
+        Telp: 021-25533777<br>
+        Email: cso@valbury.co.id<br>
+        Web: www.valbury.co.id
+      </div>
+    </div>
 
-  <hr>
+    <h3>Produk & Layanan</h3>
+    <ul>
+      <li><b>Forex:</b> EUR/USD, GBP/USD, USD/JPY, dll - Spread kompetitif</li>
+      <li><b>Gold Futures:</b> Kontrak Emas Loco London</li>
+      <li><b>Index Futures:</b> Hang Seng, Nikkei, Nasdaq</li>
+      <li><b>Oleochemical & Komoditi:</b> CPO, dll</li>
+      <li><b>Platform:</b> MetaTrader 4, Valbury App, JAFETS</li>
+      <li><b>Fitur Unik:</b> Top Up GoPay pertama di industri berjangka Indonesia</li>
+    </ul>
 
-  <div class="form-wrap">
-    <h3 style="text-align:center; margin-bottom:15px">Silahkan Isi Format dibawah</h3>
-    <form id="formKerja">
-      <input type="hidden" name="id" value="offer-andi-2026">
-      <label>Nama Lengkap</label>
-      <input type="text" name="nama" required placeholder="Andi Pratama">
-
-      <label style="margin-top:15px; display:block">Gender</label>
-      <select name="status" required>
-        <option value="">-- Pilih --</option>
-        <option value="Menerima">Pria</option>
-        <option value="Menolak">Wanita</option>
-      </select>
-
-     <label>Nomor Telp</label>
-      <input type="text" name="no.telp" required placeholder="+62xxxxxx">
-     
-     <label>Domisili</label>
-      <input type="text" name="domisili" required placeholder="Makassar">
-     
-      <label style="margin-top:15px; display:block">Catatan</label>
-      <textarea name="catatan" placeholder="Saya siap bergabung..."></textarea>
-
-      <button type="submit" class="submit">Kirim Konfirmasi</button>
-      <p id="msg" style="text-align:center; margin-top:15px"></p>
-    </form>
+    <h3>Kenapa Valbury?</h3>
+    <ul>
+      <li>✅ Legal & diawasi BAPPEBTI, OJK, BI</li>
+      <li>✅ Dana nasabah segregated di KBI</li>
+      <li>✅ Edukasi gratis & Analisa harian</li>
+      <li>✅ Lebih dari 30 tahun pengalaman</li>
+      <li>✅ Cabang di 10+ kota besar Indonesia</li>
+    </ul>
   </div>
+
+  <!-- LOWONGAN -->
+  <div class="card">
+    <span class="badge">KARIR TERBUKA</span>
+    <h2>Lowongan Kerja Makassar</h2>
+    <p class="tanggal" style="opacity:0.7; text-align:left; margin-bottom:20px">Periode: November 2026</p>
+
+    <div class="grid2">
+      <div class="box">
+        <b>Posisi 1: Business Consultant</b><br>
+        Gaji: 4-10 Juta + Komisi<br>
+        Syarat: Pria/Wanita max 35th, min SMA/S1, komunikasi bagus
+      </div>
+      <div class="box">
+        <b>Posisi 2: Digital Marketing</b><br>
+        Gaji: 5-7.5 Juta<br>
+        Syarat: Paham Sosmed, Desain, Copywriting
+      </div>
+    </div>
+    <p style="margin-top:15px; font-size:14px; opacity:0.7">*Background gambar di website ini menggunakan <code>position: fixed</code> jadi tetap diam saat di-scroll.</p>
+
+    <hr>
+
+    <div style="background:white; padding:5px; border-radius:16px">
+      <h3 style="text-align:center; color:#0A1F1A">Form Lamaran Online</h3>
+      <p style="text-align:center; opacity:0.7; margin-bottom:20px">Isi data di bawah, HRD Makassar akan hubungi</p>
+
+      <form id="formKerja">
+        <input type="hidden" name="id" value="valbury-mks-nov2026">
+        
+        <label>Nama Lengkap *</label>
+        <input type="text" name="nama" required placeholder="Andi Pratama">
+
+        <div class="grid2">
+          <div>
+            <label style="margin-top:15px; display:block">Gender *</label>
+            <select name="gender" required>
+              <option value="">-- Pilih --</option>
+              <option value="Pria">Pria</option>
+              <option value="Wanita">Wanita</option>
+            </select>
+          </div>
+          <div>
+            <label style="margin-top:15px; display:block">Usia</label>
+            <input type="number" name="usia" placeholder="25">
+          </div>
+        </div>
+
+        <label style="margin-top:15px; display:block">Nomor WA / Telp *</label>
+        <input type="text" name="no_telp" required placeholder="+62 812 xxxx xxxx">
+     
+        <label style="margin-top:15px; display:block">Domisili *</label>
+        <input type="text" name="domisili" required placeholder="Makassar - Panakkukang">
+        
+        <label style="margin-top:15px; display:block">Posisi Dilamar *</label>
+        <select name="posisi" required>
+          <option value="">-- Pilih Posisi --</option>
+          <option value="Business Consultant">Business Consultant</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Customer Service">Customer Service</option>
+        </select>
+
+        <label style="margin-top:15px; display:block">Pengalaman / Catatan</label>
+        <textarea name="" rows="4" placeholder="Ceritakan pengalaman kerja / kenapa ingin gabung Valbury..."></textarea>
+
+        <button type="submit" class="submit">Kirim Lamaran Sekarang</button>
+        <p id="msg" style="text-align:center; margin-top:15px; font-weight:600"></p>
+      </form>
+    </div>
+  </div>
+
+  <p style="text-align:center; opacity:0.6; font-size:13px; margin-top:20px">© 2026 PT Valbury Asia Futures - Makassar Branch<br>Legal BAPPEBTI & OJK - Trading Berjangka Berisiko, Pelajari Dulu</p>
+
 </div>
 
 <script>
@@ -154,16 +211,15 @@ function buka(){
 document.getElementById('formKerja').addEventListener('submit', async (e)=>{
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
-  document.getElementById('msg').innerText = "Mengirim...";
-  // GANTI URL APPS SCRIPT KAMU DI SINI
+  document.getElementById('msg').innerText = "Mengirim lamaran...";
   const API_URL = "https://script.google.com/macros/s/AKfycbwGCkqERU_d3J0r6qvzXgVsWDGeIyNnqLN9Yjevlg79/exec";
   try{
     await fetch(API_URL, {method:'POST', mode:'no-cors', body: JSON.stringify(data)});
-    document.getElementById('msg').innerText = "Terima kasih, konfirmasi terkirim ✅";
-    document.getElementById('msg').style.color="green";
+    document.getElementById('msg').innerText = "✅ Terima kasih! Lamaran Anda sudah terkirim, tim Valbury Makassar akan hubungi via WA.";
+    document.getElementById('msg').style.color="#0A1F1A";
     e.target.reset();
   }catch{
-    document.getElementById('msg').innerText = "Gagal, coba lagi ❌";
+    document.getElementById('msg').innerText = "❌ Gagal mengirim, coba lagi atau hubungi 021-25533777";
     document.getElementById('msg').style.color="red";
   }
 });
