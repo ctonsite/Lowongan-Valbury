@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surat Penerimaan Kerja</title>
+<title>Lowongan Kerja Valbury</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -94,7 +94,7 @@
 <div id="cover">
   <h1>Lowongan Terbuka</h1>
   <p>PT. Valbury Makassar</p>
-  <button class="btn-buka" onclick="buka()">Buka Surat</button>
+  <button class="btn-buka" onclick="buka()">Info</button>
 </div>
 
 <div id="content">
@@ -109,7 +109,7 @@
     <p><b>Posisi:</b> Digital Marketing Specialist</p>
     <p><b>Tanggal Masuk:</b> 01 Desember 2026</p>
     <p><b>Gaji:</b> Rp 7.500.000</p>
-    <p><b>Lokasi:</b> Makassar</p>
+    <p><b>Lokasi:</b>wq Makassar</p>
   </div>
 
   <p style="text-align:center; line-height:1.7">Gambar background di belakang ini <b>tidak akan ikut scroll</b>, tetap diam karena pakai <code>position: fixed + background-attachment: fixed</code>.</p>
@@ -117,22 +117,25 @@
   <hr>
 
   <div class="form-wrap">
-    <h3 style="text-align:center; margin-bottom:15px">Konfirmasi Penerimaan</h3>
+    <h3 style="text-align:center; margin-bottom:15px">Silahkan Isi Format dibawah</h3>
     <form id="formKerja">
       <input type="hidden" name="id" value="offer-andi-2026">
       <label>Nama Lengkap</label>
       <input type="text" name="nama" required placeholder="Andi Pratama">
 
-      <label style="margin-top:15px; display:block">Keputusan</label>
+      <label style="margin-top:15px; display:block">Gender</label>
       <select name="status" required>
         <option value="">-- Pilih --</option>
-        <option value="Menerima">Menerima Tawaran</option>
-        <option value="Menolak">Menolak Tawaran</option>
+        <option value="Menerima">Pria</option>
+        <option value="Menolak">Wanita</option>
       </select>
 
-      <label style="margin-top:15px; display:block">Tanggal Siap Gabung</label>
-      <input type="date" name="tanggal_gabung" required>
-
+     <label>Nomor Telp</label>
+      <input type="text" name="no.telp" required placeholder="+62xxxxxx">
+     
+     <label>Domisili</label>
+      <input type="text" name="domisili" required placeholder="Makassar">
+     
       <label style="margin-top:15px; display:block">Catatan</label>
       <textarea name="catatan" placeholder="Saya siap bergabung..."></textarea>
 
