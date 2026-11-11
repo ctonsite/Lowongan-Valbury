@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Penerimaan Kerja</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',sans-serif;
+    color:#1E2A47;
+  }
+  /* GAMBAR IMPOR YANG TETAP SAAT DISCROLL */
+  .bg-fixed{
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background-image: url('URL_GAMBAR_KAMU.jpg'); /* GANTI DI SINI */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+  .bg-overlay{
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(240,244,248,0.85); /* warna overlay biar teks kebaca */
+    z-index: -1;
+  }
+
+  #cover{
+    height:100vh;
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center;
+    color:white;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('URL_GAMBAR_KAMU.jpg') center/cover fixed;
+  }
+  #cover h1{font-family:'Playfair Display',serif; font-size:3rem}
+  #cover p{margin-top:10px; font-size:1.2rem}
+  .btn-buka{
+    margin-top:25px; padding:14px 35px;
+    background:#D4AF37; color:white;
+    border:none; border-radius:50px;
+    font-size:1.1rem; cursor:pointer; font-weight:600;
+  }
+
+  #content{
+    display:none;
+    max-width:720px; margin:40px auto;
+    background:white;
+    padding:40px 30px;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+  }
+  .foto{
+    width:180px; height:180px;
+    border-radius:50%; object-fit:cover;
+    border:4px solid #D4AF37; margin:0 auto 20px; display:block;
+  }
+  h2{font-family:'Playfair Display',serif; color:#D4AF37; text-align:center; font-size:2.2rem; margin:10px 0}
+  .tanggal{text-align:center; opacity:0.7; margin-bottom:20px}
+  .box{
+    background:#F8FAFC; padding:20px;
+    border-radius:12px; text-align:left; margin:20px 0;
+    border-left:4px solid #D4AF37;
+  }
+  hr{margin:30px 0; border:none; border-top:1px solid #eee}
+  .form-wrap{
+    background:#fff; padding:25px;
+    border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    margin-top:20px;
+  }
+  input, textarea, select{
+    width:100%; padding:14px; margin-top:8px;
+    border:2px solid #eee; border-radius:10px; outline:none;
+  }
+  button.submit{
+    width:100%; padding:16px; margin-top:15px;
+    background:#D4AF37; color:white;
+    border:none; border-radius:10px;
+    font-weight:600; font-size:1rem; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND TETAP -->
+<div class="bg-fixed"></div>
+<div class="bg-overlay"></div>
+
+<div id="cover">
+  <h1>Selamat! Anda Diterima</h1>
+  <p>PT. Maju Bersama Sejahtera</p>
+  <button class="btn-buka" onclick="buka()">Buka Surat</button>
+</div>
+
+<div id="content">
+  <img src="URL_GAMBAR_KAMU.jpg" class="foto" alt="perusahaan">
+  <h2>Offering Letter</h2>
+  <p class="tanggal">Makassar, 11 November 2026</p>
+
+  <p style="line-height:1.8; text-align:center">Setelah proses seleksi, kami menyatakan Anda <b>DITERIMA</b> sebagai bagian dari tim kami.</p>
+
+  <div class="box">
+    <p><b>Nama:</b> Andi Pratama</p>
+    <p><b>Posisi:</b> Digital Marketing Specialist</p>
+    <p><b>Tanggal Masuk:</b> 01 Desember 2026</p>
+    <p><b>Gaji:</b> Rp 7.500.000</p>
+    <p><b>Lokasi:</b> Makassar</p>
+  </div>
+
+  <p style="text-align:center; line-height:1.7">Gambar background di belakang ini <b>tidak akan ikut scroll</b>, tetap diam karena pakai <code>position: fixed + background-attachment: fixed</code>.</p>
+
+  <hr>
+
+  <div class="form-wrap">
+    <h3 style="text-align:center; margin-bottom:15px">Konfirmasi Penerimaan</h3>
+    <form id="formKerja">
+      <input type="hidden" name="id" value="offer-andi-2026">
+      <label>Nama Lengkap</label>
+      <input type="text" name="nama" required placeholder="Andi Pratama">
+
+      <label style="margin-top:15px; display:block">Keputusan</label>
+      <select name="status" required>
+        <option value="">-- Pilih --</option>
+        <option value="Menerima">Menerima Tawaran</option>
+        <option value="Menolak">Menolak Tawaran</option>
+      </select>
+
+      <label style="margin-top:15px; display:block">Tanggal Siap Gabung</label>
+      <input type="date" name="tanggal_gabung" required>
+
+      <label style="margin-top:15px; display:block">Catatan</label>
+      <textarea name="catatan" placeholder="Saya siap bergabung..."></textarea>
+
+      <button type="submit" class="submit">Kirim Konfirmasi</button>
+      <p id="msg" style="text-align:center; margin-top:15px"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+function buka(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('content').style.display='block';
+  window.scrollTo(0,0);
+}
+document.getElementById('formKerja').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  document.getElementById('msg').innerText = "Mengirim...";
+  // GANTI URL APPS SCRIPT KAMU DI SINI
+  const API_URL = "https://script.google.com/macros/s/AKfycbwGCkqERU_d3J0r6qvzXgVsWDGeIyNnqLN9Yjevlg79/exec";
+  try{
+    await fetch(API_URL, {method:'POST', mode:'no-cors', body: JSON.stringify(data)});
+    document.getElementById('msg').innerText = "Terima kasih, konfirmasi terkirim ✅";
+    document.getElementById('msg').style.color="green";
+    e.target.reset();
+  }catch{
+    document.getElementById('msg').innerText = "Gagal, coba lagi ❌";
+    document.getElementById('msg').style.color="red";
+  }
+});
+</script>
+
+</body>
+</html>
