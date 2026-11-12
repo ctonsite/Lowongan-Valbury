@@ -8,42 +8,15 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Inter',sans-serif; color:#1E2A47; line-height:1.6}
-  
-  .bg-fixed{
-    position: fixed; top:0; left:0; width:100%; height:100%;
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920');
-    background-size: cover; background-position: center; z-index:-2;
-  }
-  .bg-overlay{
-    position: fixed; top:0; left:0; width:100%; height:100%;
-    background: linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%);
-    z-index:-1;
-  }
-
-  /* COVER VIDEO */
-  #cover{
-    position: relative;
-    height:100vh; display:flex; flex-direction:column;
-    justify-content:center; align-items:center; text-align:center; color:white;
-    padding:20px; overflow:hidden;
-  }
-  #cover video.bg-video{
-    position: absolute; top:0; left:0;
-    width:100%; height:100%;
-    object-fit: cover;
-    z-index:-2;
-  }
-  #cover .cover-overlay{
-  position: absolute; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.30); /* cuma 30% hitam, TIDAK hijau lagi */
-  z-index:-1;
-  }
- 
-  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:1}
+  .bg-fixed{position:fixed; top:0; left:0; width:100%; height:100%; background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920'); background-size:cover; background-position:center; z-index:-2}
+  .bg-overlay{position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%); z-index:-1}
+  #cover{position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white; padding:20px; overflow:hidden}
+  #cover video.bg-video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2}
+  #cover .cover-overlay{position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.30); z-index:-1}
+  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:1; text-shadow:0 4px 20px rgba(0,0,0,0.9)}
   #cover h1 span{color:#D4AF37}
-  #cover p{margin-top:15px; font-size:1.25rem; opacity:0.9; max-width:600px; z-index:1}
-  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; letter-spacing:0.5px; box-shadow:0 10px 30px rgba(212,175,55,0.4); z-index:1}
-
+  #cover p{margin-top:15px; font-size:1.25rem; max-width:600px; z-index:1; text-shadow:0 2px 12px rgba(0,0,0,0.9); color:white}
+  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; box-shadow:0 10px 30px rgba(212,175,55,0.4); z-index:1}
   #content{display:none; max-width:800px; margin:0 auto; padding:30px 20px 80px}
   .card{background:white; padding:35px 30px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.12); margin-bottom:25px}
   .badge{display:inline-block; background:#0A1F1A; color:#D4AF37; padding:6px 14px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:15px}
@@ -67,14 +40,13 @@
 <div class="bg-fixed"></div>
 <div class="bg-overlay"></div>
 
-<!-- COVER JADI VIDEO -->
 <div id="cover">
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="lv_0_20261112093237.mp4" type="video/mp4">
   </video>
   <div class="cover-overlay"></div>
-  <h1 style="text-shadow:0 4px 20px rgba(0,0,0,0.9)">PT VALBURY <span style="color:#D4AF37">MAKASSAR</span></h1>
-  <p style="text-shadow:0 2px 12px rgba(0,0,0,0.9); color:white">Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
+  <h1>PT VALBURY <span>MAKASSAR</span></h1>
+  <p>Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003.</p>
   <button class="btn-buka" onclick="buka()">Lihat Profil & Lowongan</button>
 </div>
 
@@ -83,57 +55,33 @@
     <span class="badge">PROFIL PERUSAHAAN</span>
     <img src="IMG_20261112_075548.jpg" class="foto" alt="Valbury Office">
     <h2>PT Valbury Asia Futures</h2>
-    <p style="opacity:0.8">PT Valbury Asia Futures adalah perusahaan pialang berjangka terkemuka, cikal bakal dari PT Halim Danamas International tahun 1990 - salah satu pendiri Bursa Berjangka Jakarta (BBJ). Tahun 2003 resmi menjadi Valbury Asia Futures yang fokus pada perdagangan derivatif.</p>
-    <h3>Visi & Misi</h3>
-    <p><b>Visi:</b> Menjadi perusahaan pialang berjangka terbaik di Indonesia yang menjadi rujukan utama investor dalam perdagangan derivatif.</p>
-    <p style="margin-top:10px"><b>Misi:</b> Membangun kemitraan jangka panjang berlandaskan kepercayaan, keandalan, edukasi berkelanjutan, dan layanan teknologi canggih.</p>
+    <p style="opacity:0.8">PT Valbury Asia Futures adalah perusahaan pialang berjangka terkemuka, cikal bakal dari PT Halim Danamas International tahun 1990.</p>
     <h3>Legalitas Lengkap</h3>
     <div class="legal">
-      • Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003 – 5 Feb 2003<br>
-      • Anggota Bursa JFX: SPAB-046/BBJ/06/02 – 18 Juni 2002<br>
-      • Anggota ICDX & ICH: 077 & 078/SK/DIR/VI/2026<br>
-      • Kliring KBI: 13/AKA-KBI/III/2003<br>
-      • Izin Online: 22/BAPPEBTI/KEP-PBK/08/2014<br>
-      • PALN Luar Negeri: Alpaca Securities LLC<br>
-      • OJK Derivatif: S-124/PM.02/2025<br>
-      • BI PUVA: 28/307/DPPK/Srt/B – 17 Mar 2026<br>
-      • Kantor Pusat: Menara Karya Lt 9, Jl. HR Rasuna Said X-5 Kav 1-2, Kuningan, Jaksel 12950
+      Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003<br>
+      Anggota JFX: SPAB-046/BBJ/06/02<br>
+      Kantor Pusat: Menara Karya Lt 9, Kuningan, Jaksel 12950
     </div>
   </div>
 
   <div class="card">
     <span class="badge">CABANG MAKASSAR</span>
     <h2>Valbury Makassar</h2>
-    <p>Sebagai salah satu cabang strategis di Indonesia Timur, Valbury Makassar melayani edukasi dan transaksi untuk nasabah retail & korporat di Sulawesi.</p>
     <div class="grid2" style="margin-top:20px">
-      <div class="box"><b>Alamat</b><br>Ratulangi Point, Jl. DR. Ratulangi No.2 Lt 3, Mangkura, Kec. Ujung Pandang, Kota Makassar, Sulawesi Selatan 90114</div>
-      <div class="box"><b>Kontak Resmi</b><br>Telp: +62 819-4445-9643 (Novi)<br>Instagram: ririnteamvalbury_<br>Tiktok: ririnteamvalbury</div>
+      <div class="box"><b>Alamat</b><br>Ratulangi Point, Jl. DR. Ratulangi No.2 Lt 3, Makassar 90114</div>
+      <div class="box"><b>Kontak Resmi</b><br>Telp: +62 819-4445-9643 (Novi)<br>IG: ririnteamvalbury_</div>
     </div>
-    <h3>Produk & Layanan</h3>
-    <ul>
-      <li><b>Forex:</b> EUR/USD, GBP/USD, USD/JPY, dll - Spread kompetitif</li>
-      <li><b>Gold Futures:</b> Kontrak Emas Loco London</li>
-      <li><b>Index Futures:</b> Hang Seng, Nikkei, Nasdaq</li>
-      <li><b>Platform:</b> MetaTrader 4, Valbury App, Valbury Web</li>
-    </ul>
-    <h3>Kenapa Valbury?</h3>
-    <ul>
-      <li>✅ Legal & diawasi BAPPEBTI, OJK, BI</li>
-      <li>✅ Dana nasabah segregated di KBI</li>
-      <li>✅ Edukasi gratis & Analisa harian</li>
-      <li>✅ Lebih dari 30 tahun pengalaman</li>
-    </ul>
   </div>
 
   <div class="card">
     <span class="badge">KARIR TERBUKA</span>
     <h2>Lowongan Kerja Makassar</h2>
-    <p style="opacity:0.7; text-align:left; margin-bottom:20px">Periode: November 2026</p>
+    <p style="opacity:0.7; margin-bottom:20px">Periode: November 2026</p>
     <div class="grid2">
-      <div class="box"><b>Posisi : Business Consultant</b><br><b>Posisi : Analyst Market(Trader)</b></div>
-      <div class="box"><b>Syarat Kualifikasi : </b><br>Pria/Wanita <br> Minimal SMA/SMK <br> Sehat Jasmani & Rohani <br> Disiplin, Jujur, Pekerja Keras & Kreatif.</div>
-      <div class="box"><b>Berkas yang perlu disiapkan : </b><br>Surat Lamaran<br>Fotokopi Ijazah terakhir<br>Fotokopi KTP<br>Fotokopi Kartu Keluarga<br>Buku Rek. BCA/BRI</div>
-      <div class="box"><b>Benefit : </b><br>Bonus + Komisi,<br>Hari Sabtu-Minggu & Tanggal merah Libur</div>
+      <div class="box"><b>Posisi:</b><br>Business Consultant<br>Analyst Market (Trader)</div>
+      <div class="box"><b>Syarat:</b><br>Pria/Wanita, min SMA/SMK, Sehat jasmani rohani, Disiplin & Jujur</div>
+      <div class="box"><b>Berkas:</b><br>Surat Lamaran, Ijazah, KTP, KK, Rek BCA/BRI</div>
+      <div class="box"><b>Benefit:</b><br>Bonus + Komisi, Sabtu-Minggu Libur</div>
     </div>
     <hr>
     <div style="background:white; padding:5px; border-radius:16px">
@@ -141,19 +89,25 @@
       <form id="formKerja">
         <input type="hidden" name="id" value="valbury-mks-nov2026">
         <label>Nama Lengkap *</label><input type="text" name="nama" required placeholder="Andi Pratama">
+        
         <div class="grid2">
           <div><label style="margin-top:15px; display:block">Gender *</label><select name="gender" required><option value="">-- Pilih --</option><option value="Pria">Pria</option><option value="Wanita">Wanita</option></select></div>
           <div><label style="margin-top:15px; display:block">Usia</label><input type="number" name="usia" placeholder="25"></div>
         </div>
+
+        <div class="grid2">
+          <div><label style="margin-top:15px; display:block">Email *</label><input type="email" name="email" required placeholder="andi@gmail.com"></div>
+          <div><label style="margin-top:15px; display:block">Posisi Dilamar *</label><select name="posisi" required><option value="">-- Pilih --</option><option value="Business Consultant">Business Consultant</option><option value="Analyst Market">Analyst Market (Trader)</option></select></div>
+        </div>
+
         <label style="margin-top:15px; display:block">Nomor WA / Telp *</label><input type="text" name="no_telp" required placeholder="+62 812 xxxx xxxx">
         <label style="margin-top:15px; display:block">Domisili *</label><input type="text" name="domisili" required placeholder="Makassar - Panakkukang">
-        <label style="margin-top:15px; display:block">Pengalaman / Catatan</label><textarea name="catatan" rows="4" placeholder="Ceritakan pengalaman kerja / kenapa ingin gabung Valbury..."></textarea>
+        <label style="margin-top:15px; display:block">Pengalaman / Catatan</label><textarea name="catatan" rows="4" placeholder="Ceritakan pengalaman..."></textarea>
         <button type="submit" class="submit">Kirim Lamaran Sekarang</button>
         <p id="msg" style="text-align:center; margin-top:15px; font-weight:600"></p>
       </form>
     </div>
   </div>
-  <p style="text-align:center; opacity:0.6; font-size:13px; margin-top:20px">© 2026 PT Valbury Asia Futures - Makassar Branch<br>Legal BAPPEBTI & OJK - Trading Berjangka Berisiko, Pelajari Dulu</p>
 </div>
 
 <script>
