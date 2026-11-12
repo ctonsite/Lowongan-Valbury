@@ -1,132 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil & Lowongan - Valbury Makassar</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valbury Makassar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif; color:#1E2A47; line-height:1.7; font-size:16px}
-  .bg-fixed{position:fixed; top:0; left:0; width:100%; height:100%; background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920'); background-size:cover; background-position:center; z-index:-2}
-  .bg-overlay{position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%); z-index:-1}
-  #cover{position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white; padding:20px; overflow:hidden}
-  #cover video.bg-video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2}
-  #cover .cover-overlay{position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.30); z-index:-1}
-  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:1; text-shadow:0 4px 20px rgba(0,0,0,0.9)}
-  #cover h1 span{color:#D4AF37}
-  #cover p{margin-top:15px; font-size:1.25rem; max-width:650px; z-index:1; text-shadow:0 2px 12px rgba(0,0,0,0.9); color:white}
-  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; box-shadow:0 10px 30px rgba(212,175,55,0.4); z-index:1}
-  #content{display:none; max-width:800px; margin:0 auto; padding:30px 20px 80px}
-  .card{background:white; padding:35px 30px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.12); margin-bottom:25px}
-  .badge{display:inline-block; background:#0A1F1A; color:#D4AF37; padding:6px 14px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:15px}
-  h2{font-family:'Playfair Display',serif; color:#0A1F1A; font-size:2rem; margin-bottom:10px}
-  h3{font-family:'Playfair Display',serif; color:#D4AF37; font-size:1.4rem; margin:25px 0 12px}
-  .foto{width:100%; height:260px; border-radius:16px; object-fit:cover; margin-bottom:20px; display:block}
-  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:15px}
-  .box{background:#F8FAFC; padding:18px; border-radius:12px; border-left:4px solid #D4AF37; text-align:left; font-size:15.5px}
-  .box b{color:#0A1F1A}
-  ul{padding-left:20px; text-align:left} ul li{margin-bottom:8px; font-size:15.5px}
-  hr{margin:35px 0; border:none; border-top:1px solid #E5E7EB}
-  label{font-weight:600; font-size:15px}
-  input,textarea,select{width:100%; padding:14px; margin-top:8px; border:2px solid #E5E7EB; border-radius:10px; outline:none; font-family:'Inter',sans-serif; font-size:15px}
-  input:focus,textarea:focus,select:focus{border-color:#D4AF37}
-  button.submit{width:100%; padding:16px; margin-top:18px; background:#0A1F1A; color:#D4AF37; border:none; border-radius:10px; font-weight:700; font-size:1.05rem; cursor:pointer}
-  .legal{font-size:14.5px; color:#6B7280; background:#F9FAFB; padding:15px; border-radius:10px; line-height:1.8}
-  @media(max-width:600px){#cover h1{font-size:2.2rem}.grid2{grid-template-columns:1fr}.card{padding:25px 20px}}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif}
+#cover{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;position:relative;overflow:hidden;background:#000}
+#cover video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+#cover .ov{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(10,31,26,0.7)}
+#cover h1,#cover p,#cover button{position:relative;z-index:2}
+#cover h1{font-family:Playfair Display,serif;font-size:3rem}#cover h1 span{color:#D4AF37}
+.btn{margin-top:20px;padding:14px 32px;background:#D4AF37;border:none;border-radius:50px;font-weight:700;cursor:pointer}
+#content{display:none;max-width:800px;margin:0 auto;padding:30px 20px}.card{background:white;padding:30px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,0.1);margin-bottom:20px}
+label{font-weight:600;margin-top:12px;display:block}input,select,textarea{width:100%;padding:12px;margin-top:6px;border:2px solid #ddd;border-radius:8px}
+button.submit{width:100%;padding:14px;margin-top:15px;background:#0A1F1A;color:#D4AF37;border:none;border-radius:8px;font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
-<div class="bg-fixed"></div>
-<div class="bg-overlay"></div>
 <div id="cover">
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="lv_0_20261112093237.mp4" type="video/mp4">
-  </video>
-  <div class="cover-overlay"></div>
-  <h1>PT VALBURY <span>MAKASSAR</span></h1>
-  <p>Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
-  <button class="btn-buka" onclick="buka()">Lihat Profil & Lowongan</button>
+<video autoplay muted loop playsinline><source src="lv_0_20261112093237.mp4" type="video/mp4"></video>
+<div class="ov"></div>
+<h1>PT VALBURY <span>MAKASSAR</span></h1>
+<p>Legal BAPPEBTI Sejak 2003</p>
+<button class="btn" onclick="document.getElementById('cover').style.display='none';document.getElementById('content').style.display='block'">Lihat Lowongan</button>
 </div>
 <div id="content">
-  <div class="card">
-    <span class="badge">PROFIL PERUSAHAAN</span>
-    <img src="IMG_20261112_075548.jpg" class="foto" alt="Valbury Office">
-    <h2>PT Valbury Asia Futures</h2>
-    <p>PT Valbury Asia Futures adalah perusahaan pialang berjangka terkemuka, cikal bakal dari PT Halim Danamas International tahun 1990.</p>
-    <h3>Legalitas Lengkap</h3>
-    <div class="legal">
-      - Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003<br>
-      - Anggota Bursa JFX: SPAB-046/BBJ/06/02<br>
-      - Kantor Pusat: Menara Karya Lt 9, Kuningan, Jaksel 12950
-    </div>
-  </div>
-  <div class="card">
-    <span class="badge">CABANG MAKASSAR</span>
-    <h2>Valbury Makassar</h2>
-    <div class="grid2" style="margin-top:20px">
-      <div class="box"><b>Alamat</b><br>Ratulangi Point, Jl. DR. Ratulangi No.2 Lt 3, Makassar 90114</div>
-      <div class="box"><b>Kontak Resmi</b><br>Telp: +62 819-4445-9643 (Novi)<br>IG: ririnteamvalbury_</div>
-    </div>
-  </div>
-  <div class="card">
-    <span class="badge">KARIR TERBUKA</span>
-    <h2>Lowongan Kerja Makassar</h2>
-    <div class="grid2">
-      <div class="box"><b>Posisi:</b><br>Business Consultant<br>Analyst Market</div>
-      <div class="box"><b>Syarat:</b><br>Pria/Wanita, min SMA/SMK, Sehat, Disiplin & Jujur</div>
-      <div class="box"><b>Berkas:</b><br>Surat Lamaran, Ijazah, KTP, KK, Rek BCA/BRI</div>
-      <div class="box"><b>Benefit:</b><br>Bonus + Komisi, Sabtu-Minggu Libur</div>
-    </div>
-    <hr>
-    <h3 style="text-align:center; color:#0A1F1A">Form Lamaran Online</h3>
-    <form id="formKerja">
-      <input type="hidden" name="id" value="valbury-mks-nov2026">
-      <label>Nama Lengkap *</label><input type="text" name="nama" required placeholder="Andi Pratama">
-      <div class="grid2">
-        <div><label style="margin-top:15px; display:block">Gender *</label><select name="gender" required><option value="">-- Pilih --</option><option value="Pria">Pria</option><option value="Wanita">Wanita</option></select></div>
-        <div><label style="margin-top:15px; display:block">Usia</label><input type="number" name="usia" placeholder="25"></div>
-      </div>
-      <label style="margin-top:15px; display:block">Email *</label><input type="email" name="email" required placeholder="andi@gmail.com">
-      <label style="margin-top:15px; display:block">Nomor WA / Telp *</label><input type="text" name="no_telp" required placeholder="+62 812 xxxx xxxx">
-      <label style="margin-top:15px; display:block">Domisili *</label><input type="text" name="domisili" required placeholder="Makassar - Panakkukang">
-      <label style="margin-top:15px; display:block">Catatan / Pengalaman</label><textarea name="catatan" rows="4" placeholder="Ceritakan pengalaman kerja / kenapa ingin gabung Valbury..."></textarea>
-      <button type="submit" class="submit">Kirim Lamaran Sekarang</button>
-      <p id="msg" style="text-align:center; margin-top:15px; font-weight:600"></p>
-    </form>
-  </div>
+<div class="card">
+<h2>Form Lamaran Online</h2>
+<form id="formKerja">
+<input type="hidden" name="id" value="valbury-mks">
+<label>Nama Lengkap *</label><input type="text" name="nama" required>
+<label>Gender *</label><select name="gender" required><option value="">Pilih</option><option>Pria</option><option>Wanita</option></select>
+<label>Usia</label><input type="number" name="usia">
+<label>Email *</label><input type="email" name="email" required>
+<label>No WA *</label><input type="text" name="no_telp" required>
+<label>Domisili *</label><input type="text" name="domisili" required>
+<label>Catatan</label><textarea name="catatan" rows="3"></textarea>
+<button type="submit" class="submit">Kirim Lamaran</button>
+<p id="msg" style="text-align:center;margin-top:10px;font-weight:600"></p>
+</form>
+</div>
 </div>
 <script>
-function buka(){document.getElementById('cover').style.display='none';document.getElementById('content').style.display='block';window.scrollTo(0,0);}
 document.getElementById('formKerja').addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(e.target));
-  document.getElementById('msg').innerText = "Mengirim lamaran...";
-  const API_URL = "https://script.google.com/macros/s/AKfycbwGCkqERU_d3J0r6qvzXgVsWDGeIyNnqLN9Yjevlg79/exec";
-  try{
-    await fetch(API_URL, {method:'POST', mode:'no-cors', body: JSON.stringify(data)});
-    document.getElementById('msg').innerText = "✅ Terima kasih! Lamaran terkirim. Mengalihkan ke WA...";
-    document.getElementById('msg').style.color="#0A1F1A";
-    
-    const noAdmin = "6281944459643";
-    const pesanWa = `🔥 LAMARAN BARU VALBURY MAKASSAR
-
-Nama: ${data.nama}
-Gender: ${data.gender}
-Usia: ${data.usia}
-Email: ${data.email}
-WA: ${data.no_telp}
-Domisili: ${data.domisili}
-Catatan: ${data.catatan}
------------------------------`;
-    const waUrl = "https://wa.me/" + noAdmin + "?text=" + encodeURIComponent(pesanWa);
-    setTimeout(()=>{ window.open(waUrl, "_blank"); }, 800);
-
-    e.target.reset();
-  }catch{
-    document.getElementById('msg').innerText = "❌ Gagal mengirim";
-    document.getElementById('msg').style.color="red";
-  }
+e.preventDefault();
+const data = Object.fromEntries(new FormData(e.target));
+const msg = document.getElementById('msg');
+msg.innerText="Mengirim...";
+const API_URL="https://script.google.com/macros/s/AKfycbwGCkqERU_d3J0r6qvzXgVsWDGeIyNnqLN9Yjevlg79/exec";
+try{
+await fetch(API_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(data)});
+msg.innerText="✅ Lamaran terkirim!"; msg.style.color="green"; e.target.reset();
+}catch{msg.innerText="❌ Gagal"; msg.style.color="red";}
 });
 </script>
 </body>
