@@ -34,11 +34,11 @@
     z-index:-2;
   }
   #cover .cover-overlay{
-    position: absolute; top:0; left:0;
-    width:100%; height:100%;
-    background: linear-gradient(rgba(10,31,26,0.85), rgba(10,31,26,0.6));
-    z-index:-1;
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.30); /* cuma 30% hitam, TIDAK hijau lagi */
+  z-index:-1;
   }
+ 
   #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:1}
   #cover h1 span{color:#D4AF37}
   #cover p{margin-top:15px; font-size:1.25rem; opacity:0.9; max-width:600px; z-index:1}
@@ -71,11 +71,10 @@
 <div id="cover">
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="lv_0_20261112093237.mp4" type="video/mp4">
-    Browser kamu tidak support video.
   </video>
   <div class="cover-overlay"></div>
-  <h1>PT VALBURY <span>MAKASSAR</span></h1>
-  <p>Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
+  <h1 style="text-shadow:0 4px 20px rgba(0,0,0,0.9)">PT VALBURY <span style="color:#D4AF37">MAKASSAR</span></h1>
+  <p style="text-shadow:0 2px 12px rgba(0,0,0,0.9); color:white">Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
   <button class="btn-buka" onclick="buka()">Lihat Profil & Lowongan</button>
 </div>
 
@@ -132,7 +131,7 @@
     <p style="opacity:0.7; text-align:left; margin-bottom:20px">Periode: November 2026</p>
     <div class="grid2">
       <div class="box"><b>Posisi : Business Consultant</b><br><b>Posisi : Analyst Market(Trader)</b></div>
-      <div class="box"><b>Syarat Kualifikasi : </b><br>Pria/Wanita. min SMA/SMK. Sehat jasmani & rohani. Disiplin, Jujur, Pekerja Keras & Kreatif.</div>
+      <div class="box"><b>Syarat Kualifikasi : </b><br>Pria/Wanita <br> min SMA/SMK <br> Sehat jasmani & rohani <br> Disiplin, Jujur, Pekerja Keras & Kreatif.</div>
       <div class="box">Berkas yang perlu disiapkan :<br>Surat Lamaran<br>Fotokopi Ijazah terakhir<br>Fotokopi KTP<br>Fotokopi Kartu Keluarga<br>Buku Rek. BCA/BRI</div>
       <div class="box"><b>Benefit : </b><br>Bonus + Komisi,<br>Hari Sabtu-Minggu & Tanggal merah Libur</div>
     </div>
@@ -148,7 +147,6 @@
         </div>
         <label style="margin-top:15px; display:block">Nomor WA / Telp *</label><input type="text" name="no_telp" required placeholder="+62 812 xxxx xxxx">
         <label style="margin-top:15px; display:block">Domisili *</label><input type="text" name="domisili" required placeholder="Makassar - Panakkukang">
-        <label style="margin-top:15px; display:block">Posisi Dilamar *</label><select name="posisi" required><option value="">-- Pilih Posisi --</option><option value="Business Consultant">Business Consultant</option><option value="Analyst Market">Analyst Market (Trader)</option></select>
         <label style="margin-top:15px; display:block">Pengalaman / Catatan</label><textarea name="catatan" rows="4" placeholder="Ceritakan pengalaman kerja / kenapa ingin gabung Valbury..."></textarea>
         <button type="submit" class="submit">Kirim Lamaran Sekarang</button>
         <p id="msg" style="text-align:center; margin-top:15px; font-weight:600"></p>
