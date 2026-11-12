@@ -102,7 +102,7 @@ document.getElementById('formKerja').addEventListener('submit', async (e)=>{
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
   document.getElementById('msg').innerText = "Mengirim lamaran...";
-  const API_URL = "https://script.google.com/macros/s/AKfycbz9weEx4M3pEt66ecH7LxxuvlESZKT4YfoxlKzVAty6uxOxB19FyK-hehvOq2SLotkXfw/exec";
+  const API_URL = "https://script.google.com/macros/s/AKfycbzlzz5OePXciMf4PSTaTkAIcC4a04tFbXZSpnsVQs8mKycZFKK5ovtBU34-65Vrh3Iy/exec";
   try{
     await fetch(API_URL, {method:'POST', mode:'no-cors', body: JSON.stringify(data)});
     document.getElementById('msg').innerText = "✅ Terima kasih! Lamaran terkirim.";
