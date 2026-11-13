@@ -7,17 +7,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',sans-serif; color:#1E2A47; line-height:1.6}
-  .bg-fixed{position:fixed; top:0; left:0; width:100%; height:100%; background-image:url('IMG-20261112-WA2013.jpg'); background-size:cover; background-position:center; z-index:-2}
-  .bg-overlay{position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%); z-index:-1}
-  #cover{position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white; padding:20px; overflow:hidden}
-  #cover video.bg-video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2}
-  /* OVERLAY HIJAU DIHAPUS - VIDEO JADI CLEAN */
-  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:1; text-shadow: 0 2px 20px rgba(0,0,0,0.7)}
+  body{font-family:'Inter',sans-serif; color:#1E2A47; line-height:1.6; background:#fff}
+
+  /* BACKGROUND UNTUK KONTEN - DISEMBUNYIKAN DULU SAAT COVER */
+  .bg-fixed{position:fixed; top:0; left:0; width:100%; height:100%; background-image:url('IMG-20261112-WA2013.jpg'); background-size:cover; background-position:center; z-index:-2; display:none}
+  .bg-overlay{position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(240,244,248,0.92) 0%, rgba(255,255,255,0.88) 100%); z-index:-1; display:none}
+
+  /* COVER - VIDEO PALING DEPAN */
+  #cover{position:relative; height:100vh; height:100svh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; overflow:hidden; background:#fff}
+  #cover video.bg-video{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:1}
+
+  /* TEKS JADI NAVY KARENA VIDEO LATAR PUTIH */
+  #cover h1{font-family:'Playfair Display',serif; font-size:3.2rem; line-height:1.1; z-index:2; position:relative; color:#0A1F1A; text-shadow:0 2px 20px rgba(255,255,255,0.9)}
   #cover h1 span{color:#D4AF37}
-  #cover p{margin-top:15px; font-size:1.25rem; opacity:0.9; max-width:600px; z-index:1; text-shadow: 0 2px 15px rgba(0,0,0,0.7)}
-  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; box-shadow:0 10px 30px rgba(212,175,55,0.4); z-index:1}
-  #content{display:none; max-width:800px; margin:0 auto; padding:30px 20px 80px}
+  #cover p{margin-top:15px; font-size:1.25rem; max-width:600px; z-index:2; position:relative; color:#1E2A47; font-weight:500; text-shadow:0 1px 10px rgba(255,255,255,0.9)}
+  .btn-buka{margin-top:30px; padding:16px 42px; background:#D4AF37; color:#0A1F1A; border:none; border-radius:50px; font-size:1.1rem; cursor:pointer; font-weight:700; box-shadow:0 10px 30px rgba(212,175,55,0.4); z-index:2; position:relative}
+
+  #content{display:none; max-width:800px; margin:0 auto; padding:30px 20px 80px; position:relative; z-index:1}
   .card{background:white; padding:35px 30px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.12); margin-bottom:25px}
   .badge{display:inline-block; background:#0A1F1A; color:#D4AF37; padding:6px 14px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:15px}
   h2{font-family:'Playfair Display',serif; color:#0A1F1A; font-size:2rem; margin-bottom:10px}
@@ -39,14 +45,16 @@
 <body>
 <div class="bg-fixed"></div>
 <div class="bg-overlay"></div>
+
 <div id="cover">
-  <video class="bg-video" autoplay muted loop playsinline>
+  <video class="bg-video" autoplay muted loop playsinline preload="auto">
     <source src="lv_0_20261112093237.mp4" type="video/mp4">
   </video>
   <h1>PT VALBURY <span>MAKASSAR</span></h1>
   <p>Bagian dari Valbury Group - Pialang Berjangka Legal BAPPEBTI Sejak 2003. Lebih dari 30 Tahun Kepercayaan Investor Indonesia.</p>
   <button class="btn-buka" onclick="buka()">Lihat Profil & Lowongan</button>
 </div>
+
 <div id="content">
   <div class="card">
     <span class="badge">PROFIL PERUSAHAAN</span>
@@ -58,15 +66,15 @@
     <p style="margin-top:10px"><b>Misi:</b> Membangun kemitraan jangka panjang berlandaskan kepercayaan, keandalan, edukasi berkelanjutan, dan layanan teknologi canggih.</p>
     <h3>Legalitas Lengkap</h3>
     <div class="legal">
-      • Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003 – 5 Feb 2003<br>
-      • Anggota Bursa JFX: SPAB-046/BBJ/06/02 – 18 Juni 2002<br>
-      • Anggota ICDX & ICH: 077 & 078/SK/DIR/VI/2026<br>
-      • Kliring KBI: 13/AKA-KBI/III/2003<br>
-      • Izin Online: 22/BAPPEBTI/KEP-PBK/08/2014<br>
-      • PALN Luar Negeri: Alpaca Securities LLC<br>
-      • OJK Derivatif: S-124/PM.02/2025<br>
-      • BI PUVA: 28/307/DPPK/Srt/B – 17 Mar 2026<br>
-      • Kantor Pusat: Menara Karya Lt 9, Jl. HR Rasuna Said X-5 Kav 1-2, Kuningan, Jaksel 12950
+      - Izin BAPPEBTI: 184/BAPPEBTI/SI/II/2003 – 5 Feb 2003<br>
+      - Anggota Bursa JFX: SPAB-046/BBJ/06/02 – 18 Juni 2002<br>
+      - Anggota ICDX & ICH: 077 & 078/SK/DIR/VI/2026<br>
+      - Kliring KBI: 13/AKA-KBI/III/2003<br>
+      - Izin Online: 22/BAPPEBTI/KEP-PBK/08/2014<br>
+      - PALN Luar Negeri: Alpaca Securities LLC<br>
+      - OJK Derivatif: S-124/PM.02/2025<br>
+      - BI PUVA: 28/307/DPPK/Srt/B – 17 Mar 2026<br>
+      - Kantor Pusat: Menara Karya Lt 9, Jl. HR Rasuna Said X-5 Kav 1-2, Kuningan, Jaksel 12950
     </div>
   </div>
   <div class="card">
@@ -124,7 +132,13 @@
   <p style="text-align:center; opacity:0.6; font-size:13px; margin-top:20px">© 2026 PT Valbury Asia Futures - Makassar Branch<br>Legal BAPPEBTI & OJK</p>
 </div>
 <script>
-function buka(){document.getElementById('cover').style.display='none';document.getElementById('content').style.display='block';window.scrollTo(0,0);}
+function buka(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('content').style.display='block';
+  document.querySelector('.bg-fixed').style.display='block';
+  document.querySelector('.bg-overlay').style.display='block';
+  window.scrollTo(0,0);
+}
 document.getElementById('formKerja').addEventListener('submit', async (e)=>{
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
